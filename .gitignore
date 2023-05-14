@@ -37,3 +37,6 @@ _skbuild/
 
 # C++ module for leflib gets installed in leflib/ after running pip install -e .
 siliconcompiler/leflib/_leflib.*.so
+
+# My
+siliconcompiler_docker/
