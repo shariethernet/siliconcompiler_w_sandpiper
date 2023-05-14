@@ -1,16 +1,15 @@
 
 '''
-Bluespec is a high-level hardware description language. It has a variety of
-advanced features including a powerful type system that can prevent errors
-prior to synthesis time, and its most distinguishing feature, Guarded Atomic
-Actions, allow you to define hardware components in a modular manner based
-on their invariants, and let the compiler pick a scheduler.
+Transaction-Level Verilog (TL-Verilog) is an emerging extension to SystemVerilog that supports a new design methodology, called transaction-level design. 
+A transaction, in this methodology, is an entity that moves through structures like pipelines, arbiters, and queues. 
+A transaction might be a machine instruction, a flit of a packet, or a memory read/write. Transaction logic, like packet header decode or instruction execution, 
+that operates on the transaction can be placed anywhere along the transaction's flow. Tools produce the logic to carry signals through their flows to stitch the transaction logic.
 
-Documentation: https://github.com/B-Lang-org/bsc#documentation
+Documentation: https://makerchip.com/sandbox/#
 
-Sources: https://github.com/B-Lang-org/bsc
+Sources: https://github.com/TL-X-org/tlv-comp
 
-Installation: https://github.com/B-Lang-org/bsc#download
+Installation of Sandpiper-SaaS: pip install sandpiper-saas
 '''
 
 from siliconcompiler.tools.sandpiper import convert
