@@ -23,7 +23,7 @@ def make_docs(chip):
     return chip
 
 
-# Directory inside step/index dir to store bsc intermediate results.
+# Directory inside step/index dir to store tlv intermediate results.
 VLOG_DIR = 'verilog'
 
 
@@ -31,12 +31,9 @@ VLOG_DIR = 'verilog'
 # Setup Tool (pre executable)
 ################################
 def parse_version(stdout):
-    # Examples:
-    # Bluespec Compiler, version 2021.12.1-27-g9a7d5e05 (build 9a7d5e05)
-    # Bluespec Compiler, version 2021.07 (build 4cac6eba)
+    # Sandpiper does not have an explicit versioning system
     pass
-    #long_version = stdout.split()[3]
-    #return long_version.split('-')[0]
+
 
 
 ################################
@@ -60,15 +57,5 @@ def runtime_options(chip):
     cmdlist.append('--inlineGen')
     cmdlist.append('--noline')
     cmdlist.append(f'--default_includes')
-    
-    #bsc_path = ':'.join(chip.find_files('option', 'ydir') + ['%/Libraries'])
-    #cmdlist.append('-p ' + bsc_path)
-
-    #for value in chip.find_files('option', 'idir'):
-    #    cmdlist.append('-I ' + value)
-    #for value in chip.get('option', 'define'):
-    #    cmdlist.append('-D ' + value)
-
-
 
     return cmdlist

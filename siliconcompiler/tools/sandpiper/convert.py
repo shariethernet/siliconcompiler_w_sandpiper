@@ -7,7 +7,7 @@ VLOG_DIR = 'verilog'
 
 def setup(chip):
     '''
-    Performs high level synthesis to generate a verilog output
+    Invokes TL-Verilog Interpreter to generate a verilog/systemverilog output
     '''
 
     tool = 'sandpiper'
@@ -21,11 +21,6 @@ def setup(chip):
     refdir = 'tools/' + tool
     chip.set('tool', tool, 'exe', 'sandpiper-saas')
     chip.set('option','novercheck',True)
-    # This is technically the 'verbose' flag, but used alone it happens to give
-    # us the version and exit cleanly, so we'll use it here.
-    #chip.set('tool', tool, 'vswitch', '-v')
-    #chip.set('tool', tool, 'version', '>=2021.07', clobber=False)
-
     chip.set('tool', tool, 'task', task, 'refdir', refdir,
              step=step, index=index, clobber=False)
     chip.set('tool', tool, 'task', task, 'threads', os.cpu_count(),

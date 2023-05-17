@@ -1,5 +1,4 @@
 \m4_TLV_version 1d: tl-x.org
-// Makerchip & Sandpiper Conditional compilation TEST 
 
 \SV
    m4_ifelse_block(M4_MAKERCHIP, 1,['
